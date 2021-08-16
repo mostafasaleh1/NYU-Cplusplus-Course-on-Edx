@@ -1,1 +1,1 @@
-# NYU-C-Course-on-Edx
+# NYU-Cplusplus-Course-on-Edx
