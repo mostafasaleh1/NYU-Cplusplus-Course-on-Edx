@@ -6,10 +6,11 @@
 using namespace std;
 int main()
 {
-	int radius;
-	cout << "please enter the radius of the circle" << endl;
-	cin >> radius;
-	cout << "The Area of the cicle =   " << M_PI * pow(radius, 2) << endl;
-
+	//This programme takes an input character from the user and converts it into the corresponding ASCII number.
+	char x;
+	cout << "Please enter a character: " << endl;
+	cin >> x;
+	//Casting the character into integer value, and printing the result.
+	cout << "the corresponding ASCII number is:  " << (int)x << endl;
 	return 0;
 }
