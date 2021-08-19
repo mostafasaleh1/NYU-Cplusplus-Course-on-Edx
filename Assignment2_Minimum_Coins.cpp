@@ -37,13 +37,25 @@ int main()
 
 
 
-		numberQuarters = totalCents / Quarter;
+		for (int i = 25; i <= totalCents; i += 25)
+		{
+			numberQuarters++;
 
-		numberDimes = (totalCents - (numberQuarters * 25)) / Dime;
+		}
+		for (int v = 10; v <= (totalCents - numberQuarters * 25); v += 10)
+		{
+			numberDimes++;
+		}
 
-		numberNickels = (totalCents - (numberQuarters * 25) - (numberDimes * 10)) / Nickel;
+		for (int b = 5; b <= (totalCents - numberQuarters * 25 - numberDimes * 10); b += 5)
+		{
+			numberNickels++;
+		}
 
-		numberPennies = (totalCents - (numberQuarters * 25) - (numberDimes * 10) - (numberNickels * 5));
+		for (int j = 1; j <= (totalCents - numberQuarters * 25 - numberDimes * 10 - numberNickels * 5); j += 1)
+		{
+			numberPennies++;
+		}
 
 		cout << "The coins are " << numberQuarters << ", " << numberDimes << ", " << numberNickels << ", and " << numberPennies << endl;
 
