@@ -1,34 +1,58 @@
 #include <iostream>
+#include <cmath>
+
+/*
+Write a C++ programme that reads from the user
+two positive integers n,k (n<=k), and prints the value 
+of n choose k.
+
+ex:
+Please enter n and k (k <=n): 5 3
+5 choose 3 is: 10
+*/
 
 using namespace std;
 
 int main()
 {
+
+	char zzz;
+
+	int n, k, nFact, kFact, choose, z;
 	
-	//This programme takes an upper case letter from the user and converts it to a lower case letter and vice versa.
-	char x, zzz;
+	
 	do
 	{
-		cout << "please enter a character" << endl;
-		cin >> x;
-
-		if (x >= 65 && x <= 90)
+		/*---------------------------------------------------*/
+		
+		cout << "Please enter the values of (n) and (k) respectively separated by a space, where n >= k: ";
+		cin >> n >> k;
+		
+		nFact = 1;
+		for(int i = 1; i <= n; i++)
 		{
-			cout << (char)(x + 32) << endl;
+			nFact *= i;
 		}
-		else if (x >= 97 && x <= 122)
+		kFact = 1;
+		for (int i = 1; i <= k; i++)
 		{
-			cout << (char)(x - 32) << endl;
+			kFact *= i;
 		}
-		else {
-			cout << "incorrect input" << endl;
+		z = 1;
+		for (int i = 1; i <= (n - k); i++)
+		{
+			z *= i;
 		}
 
-		cout << "Do you want to do it again? y/n  :   ";
+		cout << n << "choose" << k << "is: " << nFact / (kFact * z) << endl;
+
+		/*---------------------------------------------------*/
+		cout << "do you want to try again?? (y/n)" << endl;
 		cin >> zzz;
+
 	} while (zzz == 'y');
 
-	cout << "See you" << endl;
+	cout << "See you!" << endl;
 
 	return 0;
 }
