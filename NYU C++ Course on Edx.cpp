@@ -13,13 +13,15 @@ Please enter n and k (k <=n): 5 3
 
 using namespace std;
 
+int factorial(int num);
+
 int main()
 {
 
 	char zzz;
 
-	int n, k, nFact, kFact, choose, z;
-	
+	int n, k, nFact, kFact, z, n_k;
+
 	
 	do
 	{
@@ -28,23 +30,15 @@ int main()
 		cout << "Please enter the values of (n) and (k) respectively separated by a space, where n >= k: ";
 		cin >> n >> k;
 		
-		nFact = 1;
-		for(int i = 1; i <= n; i++)
-		{
-			nFact *= i;
-		}
-		kFact = 1;
-		for (int i = 1; i <= k; i++)
-		{
-			kFact *= i;
-		}
-		z = 1;
-		for (int i = 1; i <= (n - k); i++)
-		{
-			z *= i;
-		}
+		nFact = factorial(n);
 
-		cout << n << "choose" << k << "is: " << nFact / (kFact * z) << endl;
+		kFact = factorial(k);
+
+		z = n - k;
+
+		n_k = factorial(z);
+
+		cout << n << " choose " << k << " is: " << nFact / (kFact * n_k) << endl;
 
 		/*---------------------------------------------------*/
 		cout << "do you want to try again?? (y/n)" << endl;
@@ -55,4 +49,15 @@ int main()
 	cout << "See you!" << endl;
 
 	return 0;
+}
+
+
+int factorial(int num = 1)
+{
+	int x = 1;
+	for (int i = 1; i <= num; i++)
+	{
+		x *= i;
+	}
+	return x;
 }
